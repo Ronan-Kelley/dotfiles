@@ -18,7 +18,6 @@ $copy ~/.config/i3/* ./.config/i3/
 
 ### neovim configs ###
 $copy ~/.config/nvim/* ./.config/nvim/
-$copy ~/.vim ./.vim
 
 ### bash configs ###
 $copy ~/.bashrc ./.bashrc

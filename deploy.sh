@@ -37,7 +37,6 @@ remove_conflicting_dotfiles() {
 
 	### neovim ###
 	rm -rf ~/.config/nvim
-	rm -rf ~/.vim
 
 	### bash configs ###
 	rm ~/.bashrc
