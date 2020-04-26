@@ -8,13 +8,11 @@
 alias ls='ls -hF --color=auto'
 alias ll='ls -hFl --color=auto'
 alias l='ls -hF --color=auto'
-alias r='fc -s'
-alias rd='fc'
 
 # quickstart
-alias gstart='startxfce4'
-alias n='nvim .'
-alias nv='nvim'
+alias n='nvim'
+alias r='ranger'
+alias s='spt'
 alias vpn='sudo protonvpn c -f -p udp'
 
 # package management
@@ -51,6 +49,15 @@ BLUE="\[$(tput setaf 81)\]"
 YELLOW="\[$(tput setaf 190)\]"
 TAN="\[$(tput setaf 180)\]"
 PINK="\[$(tput setaf 170)\]"
+ORANGE="\[$(tput setaf 202)\]"
 RESET="\[$(tput sgr0)\]"
 
-PS1="${PINK}[\A \u \W]${BLUE}>${RESET}"
+### show time, username, and current directory name ###
+#PS1="${PINK}[\A \u \W]${BLUE}>${RESET}"
+
+### show username and current directory name ###
+PS1="${PINK}[\u \W]${BLUE}>${RESET}"
+
+### show the regular PS1 with regular colors but with the text "ranger" just inside the first "[" ###
+### so that it's clear when the shell is a running inside of an instance of ranger                ###
+[ ! -z "$RANGER_LEVEL" ] && PS1="${PINK}[${ORANGE}ranger ${PINK}${PS1:$(( ${#PINK} + 1 )):$(( ${#PS1} - ${#PINK} - 1 ))}"
