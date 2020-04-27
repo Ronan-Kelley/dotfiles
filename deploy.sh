@@ -24,7 +24,6 @@ backup_dotfiles() {
 	
 	### neovim ###
 	mv -v ~/.config/nvim ~/.config/nvim_bak
-	mv -v ~/.vim ~/.vim_bak
 
 	### bash configs ###
 	mv ~/.bashrc ~/.bashrc.bak
@@ -47,7 +46,7 @@ remove_conflicting_dotfiles() {
 
 deploy_dotfiles() {
 	[ -z $1 ] && backup_dotfiles
-	[ ! -z $1 ] && echo "are you sure? This will permanently erase any dotfiles in its way! [y/n]" && read are_you_sure && [ "$are_you_sure" == "y" ] && remove_conflicting_dotfiles || echo "deployment of dotfiles cancelled" && return
+	[ ! -z $1 ] && echo "are you sure? This will permanently erase any dotfiles in its way! [y/n]" && read are_you_sure && [ "$are_you_sure" == "y" ] && remove_conflicting_dotfiles || $(echo "deployment of dotfiles cancelled" && return)
 	# alias for copy
 	copy='cp -r -u -v'
 
@@ -56,7 +55,6 @@ deploy_dotfiles() {
 	
 	### neovim ###
 	$copy ./.config/nvim ~/.config/nvim
-	$copy ./.vim ~/.vim
 
 	### bash configs ###
 	$copy ./.bashrc ~/.bashrc
