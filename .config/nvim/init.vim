@@ -1,13 +1,20 @@
 " Plugins will be downloaded under the specified directory
 call plug#begin('~/.vim/plugged')
 
-" declare the list of plugins
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdTree'
+""""""""""""""""""""""""""""""""""""
+"   declare the list of plugins    "
+""""""""""""""""""""""""""""""""""""
+
+" UI
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
+
+" IDE
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdTree'
 Plug 'sheerun/vim-polyglot'
+Plug 'majutsushi/tagbar'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -19,8 +26,11 @@ call plug#end()
 " load coc settings
 source ~/.config/nvim/init-coc.vim
 
-" set ctrl+n to open up nerdtree
+""""""""""""""""""""""""""""""""""
+"          custom binds          "
+""""""""""""""""""""""""""""""""""
 nmap <C-n> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " enable absolute line numbers
 " set nu

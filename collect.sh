@@ -22,3 +22,7 @@ $copy ~/.config/nvim/* ./.config/nvim/
 ### bash configs ###
 $copy ~/.bashrc ./.bashrc
 $copy ~/.bash_profile ./.bash_profile
+
+### tmux configs ###
+$copy ~/.tmux.conf ./.tmux.conf
+$copy ~/.tmux/ ./.tmux
