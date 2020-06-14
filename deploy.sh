@@ -28,6 +28,10 @@ backup_dotfiles() {
 	### bash configs ###
 	mv ~/.bashrc ~/.bashrc.bak
 	mv ~/.bash_profile ~/.bash_profile.bak
+
+	### tmux ###
+	mv ~/.tmux.conf ~/.tmux.conf.bak
+	mv ~/.tmux/ ~/.tmux_bak
 }
 
 remove_conflicting_dotfiles() {
@@ -40,6 +44,10 @@ remove_conflicting_dotfiles() {
 	### bash configs ###
 	rm ~/.bashrc
 	rm ~/.bash_profile
+
+	### tmux ###
+	rm ~/.tmux.conf
+	rm -rf ~/.tmux/
 
 	return 0
 }
@@ -59,6 +67,10 @@ deploy_dotfiles() {
 	### bash configs ###
 	$copy ./.bashrc ~/.bashrc
 	$copy ./.bash_profile ~/.bash_profile
+
+	### tmux ###
+	$copy ./.tmux.conf ~/.tmux.conf
+	$copy ./.tmux/ ~/.tmux
 }
 
 for arg in $@

@@ -25,4 +25,3 @@ $copy ~/.bash_profile ./.bash_profile
 
 ### tmux configs ###
 $copy ~/.tmux.conf ./.tmux.conf
-$copy ~/.tmux/ ./.tmux
