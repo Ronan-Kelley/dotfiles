@@ -1,5 +1,3 @@
-show_diff = true
-auto_sync = false
 dotfiles_directory = "~/dotfiles/"
 [[program]]
 name = "rodeo"
