@@ -15,13 +15,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdTree'
 Plug 'sheerun/vim-polyglot'
 Plug 'majutsushi/tagbar'
+Plug 'cespare/vim-toml'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
-
-""""""""""""""""""
-" other settings "
-""""""""""""""""""
 
 " load coc settings
 source ~/.config/nvim/init-coc.vim
@@ -29,14 +26,20 @@ source ~/.config/nvim/init-coc.vim
 """"""""""""""""""""""""""""""""""
 "          custom binds          "
 """"""""""""""""""""""""""""""""""
+
+" plugins
 nmap <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
-" enable absolute line numbers
-" set nu
+" splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
-" enable relative line numbers
-" set relativenumber
+"""""""""""""""""""""
+"   misc settings   "
+"""""""""""""""""""""
 
 " enable hybrid line numbers
 set number relativenumber
@@ -48,6 +51,14 @@ set linebreak
 " set tab style
 set tabstop=4
 set shiftwidth=4
+
+" modify splitting behavior
+set splitbelow
+set splitright
+
+""""""""""""""""""""""
+"   custom aliases   "
+""""""""""""""""""""""
 
 " set the alias Config to open this file
 command! Config e ~/.config/nvim/init.vim
@@ -61,6 +72,10 @@ command! JRun w | ! javac % && echo "" && java %
 " set OS copy/paste commands as an alternative to buffer copy/paste
 command! OSCopy w !xclip -i -sel c
 command! OSPaste r !xclip -o -sel c
+
+""""""""""""""""""""""
+"   theme settings   "
+""""""""""""""""""""""
 
 " enable truecolor
 set termguicolors

@@ -1,0 +1,27 @@
+show_diff = true
+auto_sync = false
+dotfiles_directory = "~/dotfiles/"
+[[program]]
+name = "rodeo"
+root = "~/.config/rodeo"
+paths = ["rodeo.toml"]
+
+[[program]]
+name = "nvim"
+root = "~/.config/nvim"
+paths = ["init.vim", "init-coc.vim", "coc-settings.json"]
+
+[[program]]
+name = "tmux"
+root = "~/"
+paths = [".tmux.conf"]
+
+[[program]]
+name = "bash"
+root = "~/"
+paths = [".bashrc", ".bash_profile"]
+
+[[program]]
+name = "i3"
+root = "~/.config/i3"
+paths = ["config", "status.toml"]
