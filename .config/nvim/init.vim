@@ -16,6 +16,7 @@ Plug 'scrooloose/nerdTree'
 Plug 'sheerun/vim-polyglot'
 Plug 'majutsushi/tagbar'
 Plug 'cespare/vim-toml'
+Plug 'tpope/vim-commentary'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -30,6 +31,7 @@ source ~/.config/nvim/init-coc.vim
 " plugins
 nmap <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
+nmap <M-/> :Commentary<CR>
 
 " splits
 nnoremap <C-J> <C-W><C-J>
@@ -55,6 +57,9 @@ set shiftwidth=4
 " modify splitting behavior
 set splitbelow
 set splitright
+
+set modeline
+set modelines=5
 
 """"""""""""""""""""""
 "   custom aliases   "
